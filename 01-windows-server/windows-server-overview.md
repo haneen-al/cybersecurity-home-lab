@@ -2,15 +2,15 @@
 
 ### VM creation 
 
-For this server VM, these were the virtual specs that I found sufficient..
-- Memory: 3GB
-- Processors: 2
-- Hard Disk (NVMe): 60GB
+For this client VM, the following virtual hardware specifications were sufficient for the lab:
+- **Memory:** 3GB
+- **Processors:** 2
+- **Hard Disk (NVMe):** 60GB
 
-For the CD/DVD...
-- Downloaded the Windows Server 2022 ISO file from: https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
-- Mounted the  ISO file to the CD/DVD (SATA)
+For the CD/DVD drive:
+- Downloaded the Windows Server 2022 ISO file from the [official Microsoft website](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
+- Mounted the ISO to the CD/DVD drive (SATA)
 
-Network Adpater...
-- Attached to a host-only network shared with the other VMs in this virtual LAN
+For the network adpater...
+- Attached the VM to the same host-only network as the other VMs in the virtual LAN
 
