@@ -1,9 +1,9 @@
-## Setting up AD DC on the Windows Server 
+# Setting up AD DC on the Windows Server 
 
-### Intro 
+## Intro 
 Upon opening the Windows Server VM for the first time, we are taken to GUI for the Server Manager. We need to make this server the AC DC, however, it doesn not become an Active Directory Domain Controller until it is promoted. This is our goal.
 
-### Reason
+## Reason
 The reasons for turning this server into our AC DC are listed below:
 - Runs administrative domain services for any device under its domain
 - Acts as a central security authority and database for the network
@@ -11,9 +11,9 @@ The reasons for turning this server into our AC DC are listed below:
 - Grants/denies access to network resources like files and printers (authorization)
 As one could imagine, a Windows server acting as an AC DC is essential to any enterprise network.
 
-### How it was done
+## How it was done + Results
 
-#### Static IP and Renaming Server
+### Static IP and Renaming Server
 Before evening promoting the server, two things must be ensured: the server has a static IP address, and the server is renamed. 
 
 If we don't create a static IP address, the server will dynamically receive its IP address from some DHCP server. The issue is that this dynamic IP address can and will change, whether the lease for the current IP address runs out, or the server is restarted. Without a static IP address, clients under this soon-to-be domain controller will not be able to find it, leading to unresponsive clients for users. 
@@ -26,8 +26,12 @@ We rename the server because the original name is often vague and not useful for
 
 ![Server Rename](../screenshots/01-windows-server-ss/rename_server.png)
 
+Checking that the configurations have been implemented...
 
-#### Domain Controller Promotion
+![Address and Name Check](../screenshots/01-windows-server-ss/rename&ip_result.png)
+
+
+### Domain Controller Promotion
 Now that we finally have these two core tasks completed, we can promote our server to domain controller. To do this, we first must download Active Directory Domain Services. We navigate our Server Manager, and select **Add Roles and Features**. From there we choose **Role-based or feature-based installation** as our installation type. Then, we select our server from our server pool as shown below: 
 
 ![Server Pool Selection](../screenshots/01-windows-server-ss/server_pool_selection.png)
