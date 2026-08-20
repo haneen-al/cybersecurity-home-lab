@@ -26,6 +26,8 @@ We rename the server because the original name is often vague and not useful for
 
 ![Server Rename](../screenshots/01-windows-server-ss/rename_server.png)
 
+
+#### Domain Controller Promotion
 Now that we finally have these two core tasks completed, we can promote our server to domain controller. To do this, we first must download Active Directory Domain Services. We navigate our Server Manager, and select **Add Roles and Features**. From there we choose **Role-based or feature-based installation** as our installation type. Then, we select our server from our server pool as shown below: 
 
 ![Server Pool Selection](../screenshots/01-windows-server-ss/server_pool_selection.png)
@@ -37,5 +39,21 @@ Then, we choose to make the server the AD DS as well as the DNS server. The rest
 Finally, we can promote our server to Domain Controller.
 
 ![DC Promotion](../screenshots/01-windows-server-ss/domain_controller_promo.png)
+
+We are then prompted with the deployment configuration. Since we are building this primary Domain Controller from scratch, we select **Add a new forest**. For the root domain name, to keep it simple, I chose **home.lab**. We are then prompted to choose a Directory Services Restore Mode (DSRM) password, which we can use if we ever need to boot the server into recovery mode. A secure password was chosen accordingly for this step. If all prerequisites are met, the installation should occur successfully. We can check that the domain has been created successfully on our Domain Manager. 
+
+![Domain Check](../screenshots/01-windows-server-ss/domain_check.png)
+
+We can also run a health check using the command **dcdiag** on the Command Prompt to ensure everything is working. 
+
+![dcdiag](../screenshots/01-windows-server-ss/dcdiag_check.png)
+
+And that brings us to the end of this section. As of now, our server:
+- Has had the AD DS and DNS server roles installed
+- Been promoted to DC
+- Has created the new domain home.lab
+
+Next, we tackle our Windows Client VM!
+
 
 
