@@ -24,17 +24,18 @@ To ensure the IP address is static, we go to the Control Panel --> Network and I
 
 We rename the server because the original name is often vague and not useful for dicoverability. To change the name, we do what we do on our everyday Windows computers. We change the PC name on the Windows System settings. I changed the name of server to something clear and easy to identify, **DC01**. The PC will then need to be restarted before proceeding further. 
 
-![Active Directory domain](../screenshots/01-windows-server-ss/static_ip.png)
+![Server Rename](../screenshots/01-windows-server-ss/rename_server.png)
 
 Now that we finally have these two core tasks completed, we can promote our server to domain controller. To do this, we first must download Active Directory Domain Services. We navigate our Server Manager, and select **Add Roles and Features**. From there we choose **Role-based or feature-based installation** as our installation type. Then, we select our server from our server pool as shown below: 
 
-![Active Directory domain](../screenshots/01-windows-server-ss/static_ip.png)
+![Server Pool Selection](../screenshots/01-windows-server-ss/server_pool_selection.png)
 
 Then, we choose to make the server the AD DS as well as the DNS server. The rest of the settings can be left as default.
 
-![Active Directory domain](../screenshots/01-windows-server-ss/static_ip.png)
+![Server Roles](../screenshots/01-windows-server-ss/server_roles.png)
 
 Finally, we can promote our server to Domain Controller.
 
+![DC Promotion](../screenshots/01-windows-server-ss/domain_controller_promo.png)
 
 
