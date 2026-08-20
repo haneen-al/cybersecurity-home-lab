@@ -28,6 +28,7 @@ This lab consists of 5 virtual machines...
 ## Documentation 
 
 ### Windows Server
+[Overview](./01-windows-server/windows-server-overview.md) <br>
 [Active Directory](./01-windows-server/active-directory.md) <br>
 [Password Policy](./01-windows-server/password-policy.md) <br>
 [Group Policy](./01-windows-server/group-policy.md) <br>
