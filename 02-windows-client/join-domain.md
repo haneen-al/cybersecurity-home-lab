@@ -14,12 +14,37 @@ This way, we can manage the workstation through the same centralized security an
 
 ## Implementation + Results
 
-### Step 1 - Static IP and Renaming Server
-Before even promoting the server, two things must be ensured: the server has a static IP address, and the server is renamed. 
+### Step 1 - Assigning IP Addresses
+We first must make sure that our client is within the same network segment as our server. Following our topology and addressing scheme, we assign an IP address from our `192.168.0.0/29` subnet. I configured this Windows client with and IP address of `192.168.0.3`. Our gateway will be configured as `192.168.0.1`, same as the Windows server. For our DNS server, we configure our client to get all DNS resolutions and services from our Windows server, using the IP address `192.168.0.2`. 
 
-If we don't create a static IP address, the server will dynamically obtain its IP address through DHCP. Although a DHCP server may assign the same address repeatedly, the address can change when the lease expires or if the client requests a new lease. Clients and domain services need to reliably locate the domain controller, that is why a predictable IP address is important. 
+![IP Addressing](../screenshots/02-windows-client-ss/ip_addressing.png)
 
-To ensure the IP address is static, we go to the Control Panel --> Network and Internet --> Network and Sharing Center, and click on th Ethernet adapter. By clicking Properties, we can change the content of the Internet Protocol Version 4. Following our topology, we assign a static IP address of `192.168.0.2` within our `/29` subnet. A `/29` subnet provides 8 total addresses, 6 of which are usable. For now, this is enough to support the number of nodes in our network. The default gateway is `192.168.0.1` which is tied to our pfSense VM that acts as the gateway and firewall. The preferred DNS server is set to the server's own IP address, since this Windows server will also host the DNS service used by Active Directory. Of course, the loopback address `127.0.0.1` could also be used. 
+We can verify this configuration using the command `ipconfig /all` on the command prompt. 
 
-![IP Addressing](../screenshots/01-windows-server-ss/static_ip.png)
+![IP Addressing Result](../screenshots/02-windows-client-ss/ip_addressing_result.png)
+
+### Step 2 - Joining the Windows Client to the `home.lab` Domain 
+
+To do this, we simply go to the Windows settings on our Windows client. Then we go to Systems --> About --> Device Specifications --> Domain or Workgroup. From there we give the computer an identifiable name, and input our domain name `home.lab` beside the domain selection. 
+
+![Domain Join](../screenshots/02-windows-client-ss/domain_join.png)
+
+We can verify that the client has joined the domain successfully from our server. By navigating to **Active Directory Users and Computers**, we can see our client added to the domain. 
+
+![Domain Join Server Verification](../screenshots/01-windows-server-ss/domain_join_check.png)
+
+Finally, none of this really matters if we don't have connectivity between our server and client. Nothing a few pings and an `nslookup` can't check...
+
+From the client...<br>
+![Domain Join](../screenshots/02-windows-client-ss/connectivity_test.png)
+
+From the server...<br>
+![Domain Join Server Verification](../screenshots/01-windows-server-ss/connectivity_test.png)
+
+Success! 
+
+### Conclusion 
+
+Now that we have successfully joined our Windows 11 client to our `home.lab` domain, we can move on to creating shared password policies and GPOs for security and accessibility.
+
 
