@@ -34,6 +34,7 @@ This lab consists of 5 virtual machines...
 [Group Policy](./01-windows-server/group-policy.md) <br>
 
 ### Windows Client
+[Overview](./02-windows-client/windows-client-overview.md) <br>
 [Join Domain](./02-windows-client/join-domain.md)
 
 ### pfSense / Networking 
