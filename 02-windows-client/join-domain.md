@@ -35,7 +35,7 @@ We can verify that the client has joined the domain successfully from our server
 
 Finally, none of this really matters if we don't have connectivity between our server and client. Nothing a few pings and an `nslookup` can't check...
 
-From the client...<br>
+From the client (specifically from the user account `admin` which is part of the `home.lab` domain)...<br>
 ![Domain Join](../screenshots/02-windows-client-ss/connectivity_test.png)
 
 From the server...<br>
