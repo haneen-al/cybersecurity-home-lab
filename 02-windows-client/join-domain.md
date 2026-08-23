@@ -41,7 +41,7 @@ From the client (specifically from the user account `admin` which is part of the
 From the server...<br>
 ![Domain Join Server Verification](../screenshots/01-windows-server-ss/connectivity_test.png)
 
-Success! 
+This confirms that we have connectivity and that DNS resolution is working. Success! 
 
 ### Conclusion 
 
