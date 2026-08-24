@@ -45,6 +45,6 @@ This confirms that we have connectivity and that DNS resolution is working. Succ
 
 ### Conclusion 
 
-Now that we have successfully joined our Windows 11 client to our `home.lab` domain, we can move on to creating shared password policies and GPOs for security and accessibility.
+Now that we have successfully joined our Windows 11 client to our `home.lab` domain, we can move on to creating domain users, OUs, and Security Groups.
 
 
