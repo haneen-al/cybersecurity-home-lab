@@ -9,7 +9,8 @@ Joining the Windows 11 clienty to the `home.lab` domain allows it to become part
 - Receive and enforce centralized security policies through Group Policy
 - Access domain resources based on user permissions
 - Be centrally managed by domain administrators
-- Communicate with other domain-joined systems using services provided by the domain controller
+- Communicate with other domain-joined systems using services provided by the domain controller <br>
+
 This way, we can manage the workstation through the same centralized security and administrative infrastructure used for the entire network.
 
 ## Implementation + Results
