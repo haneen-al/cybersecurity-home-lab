@@ -8,7 +8,8 @@ The reasons for turning this server into our AD DC are listed below:
 - Runs administrative domain services for any device under its domain
 - Acts as a central security authority and database for the network
 - Verifies user identities (authentication)
-- Grants/denies access to network resources like files and printers (authorization)
+- Grants/denies access to network resources like files and printers (authorization) <br>
+
 As one could imagine, a Windows server acting as an AD DC is essential to any enterprise network.
 
 ## Implementation + Results
