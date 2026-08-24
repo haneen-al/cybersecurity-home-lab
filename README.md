@@ -17,8 +17,9 @@ This lab consists of 5 virtual machines...
 [x] Windows Server deployment <br>
 [x] Active Directory configuration <br>
 [x] Windows client domain join <br>
-[x] Password policy configuration <br>
+[x] Creation of OUs, security groups, and domain users <br>
 [x] Group policy configuration <br>
+[ ] File sharing and resource permissions <br>
 [ ] pfSense network configuration <br>
 [ ] Network segmentation with VLANs <br>
 [ ] Docker services <br>
@@ -30,8 +31,10 @@ This lab consists of 5 virtual machines...
 ### Windows Server
 [Overview](./01-windows-server/windows-server-overview.md) <br>
 [Active Directory](./01-windows-server/active-directory.md) <br>
-[Password Policy](./01-windows-server/password-policy.md) <br>
-[Group Policy](./01-windows-server/group-policy.md) <br>
+[OUs and Security Groups](./01-windows-server/ous-&-groups) <br>
+[Domain Users](./01-windows-server/domain-users.md) <br>
+[GPOs](./01-windows-server/gpos.md) <br>
+[Access Control](./01-windows-server/access-control.md) <br>
 
 ### Windows Client
 [Overview](./02-windows-client/windows-client-overview.md) <br>
