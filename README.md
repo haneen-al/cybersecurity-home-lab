@@ -31,7 +31,7 @@ This lab consists of 5 virtual machines...
 ### Windows Server
 [Overview](./01-windows-server/windows-server-overview.md) <br>
 [Active Directory](./01-windows-server/active-directory.md) <br>
-[OUs and Security Groups](./01-windows-server/ous-&-groups) <br>
+[OUs and Security Groups](./01-windows-server/ous-&-groups.md) <br>
 [Domain Users](./01-windows-server/domain-users.md) <br>
 [GPOs](./01-windows-server/gpos.md) <br>
 [Access Control](./01-windows-server/access-control.md) <br>
