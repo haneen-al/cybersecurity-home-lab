@@ -29,16 +29,16 @@ This lab consists of 5 virtual machines...
 ## Documentation 
 
 ### Windows Server
-[Overview](./01-windows-server/windows-server-overview.md) <br>
-[Active Directory](./01-windows-server/active-directory.md) <br>
-[OUs and Security Groups](./01-windows-server/ous-&-groups.md) <br>
-[Domain Users](./01-windows-server/domain-users.md) <br>
-[GPOs](./01-windows-server/gpos.md) <br>
-[Access Control](./01-windows-server/access-control.md) <br>
+[Overview](./01-windows-server/1.0-windows-server-overview.md) <br>
+[Active Directory](./01-windows-server/1.1-active-directory.md) <br>
+[OUs and Security Groups](./01-windows-server/1.2-ous-&-groups.md) <br>
+[Domain Users](./01-windows-server/1.3-domain-users.md) <br>
+[GPOs](./01-windows-server/1.4-gpos.md) <br>
+[Access Control](./01-windows-server/1.5-access-control.md) <br>
 
 ### Windows Client
-[Overview](./02-windows-client/windows-client-overview.md) <br>
-[Join Domain](./02-windows-client/join-domain.md)
+[Overview](./02-windows-client/2.0-windows-client-overview.md) <br>
+[Join Domain](./02-windows-client/2.1-join-domain.md)
 
 ### pfSense / Networking 
 ...
