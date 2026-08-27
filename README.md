@@ -34,11 +34,11 @@ This lab consists of 5 virtual machines...
 [OUs and Security Groups](./01-windows-server/1.2-ous-&-groups.md) <br>
 [Domain Users](./01-windows-server/1.3-domain-users.md) <br>
 [GPOs](./01-windows-server/1.4-gpos.md) <br>
-[Access Control](./01-windows-server/1.5-access-control.md) <br>
+[File Sharing and Access Control](./01-windows-server/1.5-access-control.md) <br>
 
 ### Windows Client
 [Overview](./02-windows-client/2.0-windows-client-overview.md) <br>
-[Join Domain](./02-windows-client/2.1-join-domain.md)
+[Join Client to Domain](./02-windows-client/2.1-join-domain.md)
 
 ### pfSense / Networking 
 ...
