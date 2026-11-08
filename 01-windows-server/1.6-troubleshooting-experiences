@@ -7,11 +7,11 @@ Throughout configuring my Windows server and client, I have stumbled over many b
 
 For context, I took a very long break from working on this lab. I finally decided to get back on and, of course, tried to log in on the client using the account I always use, Haneen - Admin. This is the local Administrative account I have made for this mock-enterprise. Upon logging in with my usual password, I was told that it was time to do a password rotation. 
 
-PIC
+![TSHOOT1](../screenshots/02-windows-client-ss/tshoot-account-1.png)
 
 So I typed in a new password and...
 
-PIC
+![TSHOOT2](../screenshots/02-windows-client-ss/tshoot-account-2.png)
 
 I wasn't allowed to change my password. Well that seemed contradictive. I wasn't having an issue logging in to any other accounts however. I decided to do some investigating on the server end. 
 
@@ -19,57 +19,20 @@ I wasn't allowed to change my password. Well that seemed contradictive. I wasn't
 
 Being that my user account is specific was having issues, I decided to start there. I selected my account from the Domain Users list and browsed through all of my settings. I took a look at my account tab and spotted the issue immediately. 
 
-PIC
+![TSHOOT3](../screenshots/01-windows-server-ss/tshoot-account-3.png)
 
 My account was set to not allow password changes. A tad of an issue considering my domain-wide password policy has a requirement of a password change every 90 days. 
 
-PIC
+![TSHOOT4](../screenshots/01-windows-server-ss/tshoot-account-4.png)
 
 After unchecking the box, I gave signing in to the account another go. 
 
-PIC
+![TSHOOT5](../screenshots/02-windows-client-ss/tshoot-account-5.png)
 
 Thankfully, the password change was permitted, and I was able to log in to my account once more. 
 
-![IP Addressing](../screenshots/01-windows-server-ss/static_ip.png)
-
-We rename the server because the original name is often vague and not useful for discoverability. To change the name, we do what we do on our everyday Windows computers. We change the PC name on the Windows System settings. I changed the name of the server to something clear and easy to identify, **DC01**. The PC will then need to be restarted before proceeding further. 
-
-![Server Rename](../screenshots/01-windows-server-ss/rename_server.png)
-
-Checking that the configurations have been implemented...
-
-![Address and Name Check](../screenshots/01-windows-server-ss/rename&ip_result.png)
-
-
-### Step 2 - Domain Controller Promotion
-Now that we finally have these two core tasks completed, we can promote our server to domain controller. To do this, we first must install the Active Directory Domain Services (AD DS) role. We navigate our Server Manager, and select **Add Roles and Features**. From there we choose **Role-based or feature-based installation** as our installation type. Then, we select our server from our server pool as shown below: 
-
-![Server Pool Selection](../screenshots/01-windows-server-ss/server_pool_selection.png)
-
-We then install both the AD DS and DNS server roles. The remaining settings can be left at their defaults.
-
-![Server Roles](../screenshots/01-windows-server-ss/server_roles.png)
-
-Finally, we can promote our server to domain controller.
-
-![DC Promotion](../screenshots/01-windows-server-ss/domain_controller_promo.png)
-
-We are then prompted with the deployment configuration. Since we are building this primary domain controller from scratch, we select **Add a new forest**. For the root domain name, to keep it simple, I chose `home.lab`. We are then prompted to choose a Directory Services Restore Mode (DSRM) password, which we can use if we ever need to boot the server into recovery mode. A secure password was chosen accordingly for this step. If all prerequisites are met, the installation should occur successfully. We can check that the domain has been created successfully on our DNS Manager. 
-
-![Domain Check](../screenshots/01-windows-server-ss/domain_check.png)
-
-We can also run a health check using the command **dcdiag** on the Command Prompt to ensure everything is working. 
-
-![dcdiag](../screenshots/01-windows-server-ss/dcdiag_check.png)
-
 ## Conclusion
 
-And that brings us to the end of this section. 
+This shows the importance of ensuring that accounts have the correct settings in place upon creation, and during periodic checks. The local IT administrator not being able to access their account could become a serious issue, as administrators need to be able to maintain access to their accounts to manage and troubleshoot the company's systems. It also shows why small configuration mistakes can have bigger consequences and why regularly reviewing account settings is important.
 
-As of now, our server:
-- Has had the AD DS and DNS server roles installed
-- Has been promoted to a domain controller
-- Has created the `home.lab` domain
-
-Next, we join our [Windows Client VM to this domain!](../02-windows-client/2.1-join-domain.md)
+Next, we create and configure [the enterprise pfSense VM!](../02-windows-client/2.1-join-domain.md)
