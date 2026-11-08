@@ -16,7 +16,7 @@ This topology shows the transition from the physical connection from the host PC
 
 ## Topology
 
-![Topology](../screenshots/03-topologies-ss/Topology-Before-VLANs.png)
+![Topology](../screenshots/03-topologies-ss/Topology-Before-VLANs.drawio.png)
 
 ## Things to Note
 
