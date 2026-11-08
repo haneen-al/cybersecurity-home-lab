@@ -19,7 +19,7 @@ This lab consists of 5 virtual machines...
 [x] Windows client domain join <br>
 [x] Creation of OUs, security groups, and domain users <br>
 [x] Group policy configuration <br>
-[ ] File sharing and resource permissions <br>
+[x] File sharing and resource permissions <br>
 [ ] pfSense network configuration <br>
 [ ] Network segmentation with VLANs <br>
 [ ] Docker services <br>
@@ -35,6 +35,7 @@ This lab consists of 5 virtual machines...
 [Domain Users](./01-windows-server/1.3-domain-users.md) <br>
 [GPOs](./01-windows-server/1.4-gpos.md) <br>
 [File Sharing and Access Control](./01-windows-server/1.5-access-control.md) <br>
+[Troublesooting Windows Environment](./01-windows-server/1.6-troubleshooting-experiences.md) <br>
 
 ### Windows Client
 [Overview](./02-windows-client/2.0-windows-client-overview.md) <br>
@@ -46,8 +47,8 @@ This lab consists of 5 virtual machines...
 
 ## Goals 
 
-- Develop Windows administration skills
-- Implement network segmentation
+- Develop Windows administration knowledge through Windows Server and Windows Client
+- Implement network segmentation and firewall ACLs using pfSense
 - Deploy centralized security monitoring
 - Practice penetration testing
 - Document security configurations and lessons learned
